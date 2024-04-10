@@ -1,0 +1,6 @@
+.history
+.vscode
+__pycache__/
+output/
+Co-SLAM/
+*.pyc

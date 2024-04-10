@@ -1,0 +1,14 @@
+inherit_from: configs/Synthetic/synthetic.yaml
+mapping:
+  bound: [[-5.7, 3.8],[-0.2, 3.3],[-6.6, 3.6]]
+  marching_cubes_bound: [[-5.7, 3.8],[-0.2, 3.3],[-6.6, 3.6]]
+  
+data:
+  dataset: 'synthetic'
+  datadir: Datasets/complete_kitchen
+  output: output/Synthetic/ck
+  downsample: 1
+
+cam:
+  near: 0
+  far: 8

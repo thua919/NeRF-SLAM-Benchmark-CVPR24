@@ -1,0 +1,82 @@
+verbose: True
+test_param: False
+device: "cuda:0"
+
+rebut:
+  loss: False #fs_loss variant
+  sampling: False #ray_surface_samples variant
+  keyframe: True
+
+utils:
+  first_mesh: True
+  mesh_resolution: 0.02 # should set 0.01 for good mesh
+  mesh_bound_scale: 1.02
+  mesh_render_color: False
+  fig_freq: 100
+  mesh_freq: 500
+training:
+  rot_rep: 'quat' #'axis_angle'
+
+mapping:
+  percent_pixels_save: 0.05
+
+tracking:
+  ignore_edge_W: 20
+  ignore_edge_H: 20
+
+## Settings for hybrid ##
+hybrid: True #True
+hybrid_hash: True #implimet of hash+Tri; if False, then dense+Tri
+
+## Settings for INR+Render##
+NeRFs:
+  F: #only one: True
+    choice_MLP: False
+    choice_Dense_Grid: True
+    choice_Sparse_Grid: False
+    choice_Tri_Plane: False
+    choice_TensoRF: False
+  G: #only one: True
+    sdf_approx: False
+    sdf_style: True
+    sdf_neus: False
+  tricks:
+    # senario coupling:
+      #Cou.b. share_encoder:True, geo_app_connect_feat_dim: 0
+      #Cou. share_encoder:True, geo_app_connect_feat_dim: 15
+    # senario decoupling:
+      #Dec. share_encoder: False
+    share_encoder: True #False 
+    geo_app_connect_feat_dim: 0
+
+    gamma: 'identity' #chose from['identity','blob','freq']
+    
+    map_lr: 0.01
+    track_lr: 0.001
+    
+    keyframe_every: 5
+    first_iters: 500 ##1000 
+    mapping_iters: 20 ##30
+    tracking_iters: 20
+    mapping_pix_samples: 2048 #4080 
+    tracking_pix_samples: 1024 ##2048 
+
+    ray_stratified_samples: 48
+    ray_surface_samples: 12
+
+    color_weight: 5
+    depth_weight: 1 # 0.1
+    sdf_fs_weight: 10
+    sdf_tail_weight: 200
+    sdf_center_weight: 50
+    
+  space_resolution:
+    implicit_dim: 2 # vector length per vertex
+    res_level: 2 #16 # resolution levels
+
+    geo_block_size_fine: 0.02 
+    geo_block_size_coarse: 0.24
+    app_block_size_fine: 0.02
+    app_block_size_coarse: 0.24
+    plane_block_size_coarse: 0.24 #0.5
+    truncation: 0.1

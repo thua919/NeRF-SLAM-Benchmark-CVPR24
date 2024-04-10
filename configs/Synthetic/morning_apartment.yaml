@@ -1,0 +1,10 @@
+inherit_from: configs/Synthetic/synthetic.yaml
+mapping:
+  bound: [[-1.5, 2.2],[-0.3, 2.2],[-2.3, 1.9]]
+  marching_cubes_bound: [[-1.5, 2.2],[-0.3, 2.2],[-2.3, 1.9]]
+  
+data:
+  dataset: 'synthetic'
+  datadir: Datasets/morning_apartment
+  output: output/Synthetic/ma
+  downsample: 1

@@ -1,0 +1,14 @@
+inherit_from: configs/Synthetic/synthetic.yaml
+mapping:
+  bound: [[-2.6, 5.6],[-0.3, 3.0],[0.2, 5.1]]
+  marching_cubes_bound: [[-2.6, 5.6],[-0.3, 3.0],[0.2, 5.1]]
+  
+data:
+  dataset: 'synthetic'
+  datadir: Datasets/green_room
+  output: output/Synthetic/gr
+  downsample: 1
+
+cam:
+  near: 0
+  far: 8
