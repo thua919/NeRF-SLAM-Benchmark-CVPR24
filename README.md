@@ -120,11 +120,11 @@ for their exceptional work.
 If you find our work useful, please consider citing:
 ```BibTeX
 @inproceedings{nerfslam24hua,
-  author = {Johari, M. M. and Carta, C. and Fleuret, F.},
+  author = {Tongyan Hua and Lin Wang},
   title = {Benchmarking Implicit Neural Representation and Geometric Rendering in Real-Time RGB-D SLAM},
   booktitle = {Proceedings of the IEEE international conference on Computer Vision and Pattern Recognition (CVPR)},
   month = {June},
-  year = {2023},
+  year = {2024},
 }
 ```
 
